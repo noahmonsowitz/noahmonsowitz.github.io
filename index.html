@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noah Monsowitz | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dYf4vhvGMIz3m3+Q0R1nZpM2jvWv8jKYwWzZl7xpjYldYl9p28xv+Zz3Bl+5fiRqvO+TjdnHvJTxNf5pY1RS0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --accent: #ffb703;
+      --light: #ffffff;
+      --dark: #1a1a1a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: 'Poppins', sans-serif; }
+    body { background: var(--light); color: var(--dark); line-height: 1.6; }
+
+    /* Navigation */
+    header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255,255,255,0.9); backdrop-filter: blur(6px); z-index: 999; box-shadow: 0 2px 6px rgba(0,0,0,.05); }
+    .nav-container { max-width: 1100px; margin: 0 auto; padding: .75rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 1.35rem; font-weight: 700; color: var(--primary); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { text-decoration: none; color: var(--dark); font-weight: 500; transition: color .25s; }
+    nav a:hover, nav a.active { color: var(--primary); }
+
+    /* Hero */
+    .hero { display: grid; place-items: center; min-height: 100vh; text-align: center; background: url('images/hero-ski.jpg') center/cover fixed no-repeat; color: var(--light); position: relative; }
+    .hero::before { content:""; position:absolute; inset:0; background:rgba(15,76,129,.55); }
+    .hero-content { position: relative; padding:2rem; max-width:700px; animation: fadeIn 1.2s ease forwards; }
+    .hero h1 { font-size:clamp(2rem,6vw,3.5rem); font-weight:700; margin-bottom:1rem; }
+    .hero p { font-size:1.2rem; margin-bottom:2rem; opacity:.9; }
+    .btn-primary { display:inline-block; padding:.75rem 1.5rem; background:var(--accent); color:var(--dark); border-radius:999px; font-weight:600; text-decoration:none; transition:transform .3s, box-shadow .3s; }
+    .btn-primary:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.15); }
+
+    /* Sections */
+    section { padding:4.5rem 1rem; }
+    .container { max-width:1100px; margin:0 auto; }
+    .section-title { font-size:2rem; font-weight:600; color:var(--primary); margin-bottom:2rem; text-align:center; }
+
+    /* About */
+    .about-grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); align-items:center; }
+    .profile-pic { width:100%; max-width:300px; aspect-ratio:1/1; object-fit:cover; border-radius:2rem; box-shadow:0 10px 25px rgba(0,0,0,.1); }
+    .about-text p { margin-bottom:1.1rem; }
+
+    /* Activities */
+    .activities-grid { display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+    .card-link { text-decoration:none; }
+    .card { background:var(--light); border-radius:1.5rem; padding:1.5rem 1.25rem; box-shadow:0 6px 16px rgba(0,0,0,.07); transition:transform .25s, box-shadow .25s; height:100%; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,.12); }
+    .card h3 { font-size:1.25rem; color:var(--primary); margin-bottom:.5rem; }
+    .tag { display:inline-block; padding:.25rem .75rem; border-radius:20px; font-size:.75rem; font-weight:600; background:var(--accent); color:var(--dark); margin-bottom:.75rem; }
+
+    /* Contact */
+    .contact-grid { display:flex; flex-direction:column; align-items:center; gap:1.25rem; }
+    .contact-item { display:flex; align-items:center; gap:.75rem; font-size:1.1rem; }
+    .contact-item i { font-size:1.25rem; color:var(--primary); }
+
+    footer { background:var(--primary); color:var(--light); text-align:center; padding:1.5rem 1rem; margin-top:3rem; }
+
+    @keyframes fadeIn { 0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-logo">Noah Monsowitz</div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+      <h1>Freeride Skier · Researcher · Community Builder</h1>
+      <p>Exploring finance, technology, and the mountains—while bringing others along for the ride.</p>
+      <a href="#about" class="btn-primary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <div class="about-grid">
+        <img src="images/profile.jpg" alt="Noah Monsowitz portrait" class="profile-pic" data-aos="fade-right" />
+        <div class="about-text" data-aos="fade-left">
+          <p>I’m Noah, a high‑school senior at Lakeside School in Seattle and a competitive freeride skier ranked <strong>#485 nationally (U19)</strong>. Whether I’m dropping into a steep chute or diving into a new dataset, I thrive on challenges that demand adaptability, resilience, and community.</p>
+          <p>My academic passion centers on finance and entrepreneurship. I’ve completed Wharton’s Business and Financial Modeling specialization, earned research experience under professors from the University of Puget Sound and the University of Sheffield, and pitched winning stock ideas in national competitions.</p>
+          <p>Off the slopes and spreadsheets, I co‑founded a youth program at my synagogue and volunteer with Friendship Circle, empowering kids with special needs. Wherever I go, I look to build inclusive spaces where everyone can finish their run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section id="activities" style="background:#f9fbfd;">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Key Activities</h2>
+      <div class="activities-grid">
+        <!-- Card 1 -->
+        <a class="card-link" href="research-finfluencers.html">
+          <div class="card" data-aos="fade-up" data-aos-delay="50">
+            <span class="tag">Research</span>
+            <h3>Finfluencer Impact Study</h3>
+            <p><em>University of Puget Sound · Prof. Kapalczynski</em></p>
+            <p>How social‑media voices shape investor behavior.</p>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a class="card-link" href="cleantech-research.html">
+          <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <span class="tag">Research</span>
+            <h3>CleanTech & SDGs</h3>
+            <p><em>Cambridge Future Scholar · Prof. Aghasi</em></p>
+            <p>Government policy accelerating startups in emerging economies.</p>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a class="card-link" href="youth-program.html">
+          <div class="card" data-aos="fade-up" data-aos-delay="150">
+            <span class="tag">Leadership</span>
+            <h3>Ohr Chadash Youth Program</h3>
+            <p>Building an inclusive, values‑driven community.</p>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a class="card-link" href="skiing.html">
+          <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <span class="tag">Athletics</span>
+            <h3>Freeride Skiing</h3>
+            <p>Risk management, resilience, and ranked competition.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:#f9fbfd;">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+      <div class="contact-grid" data-aos="fade-up" data-aos-delay="50">
+        <div class="contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:noahmonsowitz@gmail.com">noahmonsowitz@gmail.com</a></span></div>
+        <div class="contact-item"><i class="fas fa-phone"></i><span><a href="tel:2062476583">+1 (206) 247‑6583</a></span></div>
+        <div class="contact-item"><i class="fab fa-linkedin"></i><span><a href="https://www.linkedin.com/in/noahmonsowitz" target="_blank" rel="noopener">LinkedIn /noahmonsowitz</a></span></div>
+        <div class="contact-item"><i class="fab fa-github"></i><span><a href="https://github.com/noahmonsowitz" target="_blank" rel="noopener">GitHub /noahmonsowitz</a></span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Noah Monsowitz · All rights reserved.</p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    function activateLink(){let index=sections.length;while(--index && window.scrollY+75 < sections[index].offsetTop){} navLinks.forEach(l=>l.classList.remove('active')); navLinks[index].classList.add('active');}
+    activateLink(); window.addEventListener('scroll', activateLink);
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

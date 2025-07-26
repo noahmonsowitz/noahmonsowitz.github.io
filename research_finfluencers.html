@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finfluencer Impact Study | Noah Monsowitz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{--primary:#0f4c81;--accent:#ffb703;--light:#ffffff;--dark:#1a1a1a;}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+    body{background:var(--light);color:var(--dark);line-height:1.6;}
+    header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);z-index:999;box-shadow:0 2px 6px rgba(0,0,0,.05);}  
+    .nav-container{max-width:1100px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-weight:700;color:var(--primary);}  
+    nav ul{display:flex;gap:1.5rem;list-style:none;}
+    nav a{text-decoration:none;color:var(--dark);font-weight:500;}
+    nav a:hover{color:var(--primary);}  
+    .hero{display:grid;place-items:center;min-height:60vh;text-align:center;background:url('images/research.jpg') center/cover no-repeat;color:var(--light);position:relative;}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(15,76,129,.55);}  
+    .hero-content{position:relative;padding:2rem;max-width:750px;}  
+    .hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:.75rem;}
+    .hero p{font-size:1rem;opacity:.9;}  
+    section{padding:4.5rem 1rem;}  
+    .container{max-width:1100px;margin:0 auto;}  
+    h2.section-title{font-size:2rem;color:var(--primary);margin-bottom:1.5rem;text-align:center;}  
+    .btn-back{display:inline-block;margin-top:2rem;padding:.6rem 1.2rem;background:var(--accent);color:var(--dark);border-radius:30px;text-decoration:none;font-weight:600;}  
+    .btn-back:hover{box-shadow:0 6px 15px rgba(0,0,0,.12);}  
+    footer{background:var(--primary);color:var(--light);text-align:center;padding:1rem 1rem;margin-top:3rem;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a class="nav-logo" href="index.html">← Back to Portfolio</a>
+      <nav><ul><li><a href="index.html#contact">Contact</a></li></ul></nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Finfluencer Impact Study</h1>
+      <p>Understanding how social‑media influencers reshape retail investor psychology and market dynamics.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Project Overview</h2>
+      <p>During my internship under <strong>Professor Ania Kapalczynski</strong> at the University of Puget Sound, I set out to examine how different social‑media platforms affected investment behavior. When preliminary data defied my hypothesis, I pivoted to isolate the true catalyst: a growing wave of <em>finfluencers</em> disseminating identical narratives across every channel.</p>
+      <p>This page distills the journey—<em>from framing the research question</em> to <em>iterative methodology shifts</em>—and showcases the ultimate insights that emerged.</p>
+
+      <h2 class="section-title" style="margin-top:3rem;">Key Contributions</h2>
+      <ul style="line-height:1.9;margin-left:1.3rem;">
+        <li>Built a <strong>100k‑tweet</strong> dataset using Python &amp; Twitter API, tagging sentiment and source credibility.</li>
+        <li>Applied <strong>topic‑modeling (LDA)</strong> to cluster influencer narratives, uncovering message homogenization over time.</li>
+        <li>Demonstrated a <strong>27 % increase</strong> in retail order‑flow volatility during synchronized finfluencer “pump” cycles.</li>
+        <li>Co‑authored a forthcoming conference abstract; slides available below.</li>
+      </ul>
+
+      <h2 class="section-title" style="margin-top:3rem;">Artifacts</h2>
+      <p>Feel free to explore the primary deliverables:</p>
+      <ul style="line-height:1.9;margin-left:1.3rem;">
+        <li><a href="assets/finfluencer-poster.pdf" target="_blank">Research Poster (PDF)</a></li>
+        <li><a href="assets/finfluencer-slides.pdf" target="_blank">Conference Slide Deck</a></li>
+        <li><a href="https://github.com/noahmonsowitz/finfluencer-analysis" target="_blank">Code Repository</a></li>
+      </ul>
+
+      <a class="btn-back" href="index.html#activities">← Back to Activities</a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Noah Monsowitz · All rights reserved.
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
